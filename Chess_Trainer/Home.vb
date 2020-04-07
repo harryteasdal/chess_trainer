@@ -31,9 +31,7 @@ Public Class Frm_home
         dbAccess = New DatabaseAccess
         Try
             conn = dbAccess.Open_Connection()
-            If (conn.State = ConnectionState.Open) Then
-                MsgBox("Connected to Database")
-            Else
+            If (conn.State <> ConnectionState.Open) Then
                 MsgBox("Not Connected to Database")
             End If
         Catch ex As Exception

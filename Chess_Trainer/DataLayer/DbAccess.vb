@@ -25,7 +25,13 @@ Public Class DatabaseAccess
         End Try
 
     End Function
-
+    Public Function Get_Data(ByVal conn As SqlConnection, strStatement As String)
+        Using sql_adapter As SqlDataAdapter = New SqlDataAdapter(strStatement, conn)
+            Dim sql_table As DataTable = New DataTable()
+            sql_adapter.Fill(sql_table)
+            Return sql_table
+        End Using
+    End Function
     Public Function Open_Connection()
         Try
             conn = New SqlConnection(connectionString)

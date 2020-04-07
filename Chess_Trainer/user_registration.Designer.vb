@@ -146,7 +146,7 @@ Partial Class Frm_Register
         '
         'Btn_AddUser
         '
-        Me.Btn_AddUser.Location = New System.Drawing.Point(18, 206)
+        Me.Btn_AddUser.Location = New System.Drawing.Point(364, 325)
         Me.Btn_AddUser.Name = "Btn_AddUser"
         Me.Btn_AddUser.Size = New System.Drawing.Size(126, 79)
         Me.Btn_AddUser.TabIndex = 13
@@ -155,7 +155,7 @@ Partial Class Frm_Register
         '
         'Btn_Delete
         '
-        Me.Btn_Delete.Location = New System.Drawing.Point(150, 206)
+        Me.Btn_Delete.Location = New System.Drawing.Point(513, 325)
         Me.Btn_Delete.Name = "Btn_Delete"
         Me.Btn_Delete.Size = New System.Drawing.Size(126, 79)
         Me.Btn_Delete.TabIndex = 14
@@ -164,7 +164,7 @@ Partial Class Frm_Register
         '
         'Btn_Return
         '
-        Me.Btn_Return.Location = New System.Drawing.Point(282, 206)
+        Me.Btn_Return.Location = New System.Drawing.Point(661, 325)
         Me.Btn_Return.Name = "Btn_Return"
         Me.Btn_Return.Size = New System.Drawing.Size(126, 79)
         Me.Btn_Return.TabIndex = 15
@@ -175,6 +175,8 @@ Partial Class Frm_Register
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Chess_Trainer.My.Resources.Resources.UserRegistration
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(814, 416)
         Me.Controls.Add(Me.Btn_Return)
         Me.Controls.Add(Me.Btn_Delete)
@@ -194,6 +196,7 @@ Partial Class Frm_Register
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Frm_Register"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registration"
         Me.ResumeLayout(False)
         Me.PerformLayout()
