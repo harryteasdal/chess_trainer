@@ -1,34 +1,19 @@
 ﻿Imports System.Data.SqlClient
 Imports Chess_Trainer.DatabaseAccess
+
 Public Class Frm_Register
     'makes a new sql connection object "conn" and use a connetion statment to connct to the database'
     'Dim conn As SqlConnection = New SqlConnection("Data Source=HARRY-PAVILION\SQLEXPRESS;Initial Catalog=Chess_Trainer;Integrated Security=True")
-    Dim db As New DatabaseAccess()
     Dim dbresult As Boolean
-    Dim conn = db.Open_Connection()
-
+    Public dbConn As SqlConnection
     'Flag to check the validation of text boxes'
     Dim isValidated = False
     Private Sub Register_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'SQL statement to pull the country id and country from county table in the database
-        Dim countries As String = "SELECT country_id, country FROM country ORDER BY country"
-        'Object to store the data from database'
-        Dim countriesTable As New DataTable()
-        'Object to read the data from database'
-        Dim countriesReader As SqlDataReader
-        Dim countriesCommand As SqlCommand
-
         'When the form loads the add user button is disabled as the text boxes have not ben check for validation'
         Btn_AddUser.Enabled = False
         Try
-            countriesCommand = db.ExecuteStatement(conn, countries)
-
-            'reads data from database and stores data in the countries table'
-            countriesReader = countriesCommand.ExecuteReader()
-            countriesTable.Load(countriesReader)
-
             'The combobox on the forms uses the data in the datatable'
-            cmb_country.DataSource = countriesTable
+            cmb_country.DataSource = Utils.GetCountries(dbConn)
 
             'Display member is what is shown in the combobox an .valuemember is waht is sent back to the database 
             cmb_country.ValueMember = "country_id"
@@ -53,16 +38,16 @@ Public Class Frm_Register
         Dim rank = Txt_Rank.Text
         Dim modified As Integer
         'SQL command to add a user to the database'
-        Dim command As New SqlCommand("Insert into dbo.chess_user values ('" & strFirstName & "','" & strSurname & "','" & strEmail & "'," & strMobile & "," & countryId & ");SELECT SCOPE_IDENTITY();", conn)
+        Dim command As New SqlCommand("Insert into dbo.chess_user values ('" & strFirstName & "','" & strSurname & "','" & strEmail & "'," & strMobile & "," & countryId & ");SELECT SCOPE_IDENTITY();", dbConn)
 
         'Connects to database to add user and closes connection once done if unsuccessful error message displayed'
         Try
 
             If isValidated Then
-                command.Connection = conn
+                command.Connection = dbConn
                 modified = Convert.ToInt32(command.ExecuteScalar())
-                Dim command2 As New SqlCommand("Insert into dbo.player_rank (rank_number, user_id) values (" & rank & "," & modified & ")", conn)
-                command2.Connection = conn
+                Dim command2 As New SqlCommand("Insert into dbo.player_rank (rank_number, user_id) values (" & rank & "," & modified & ")", dbConn)
+                command2.Connection = dbConn
                 'modified = command.ExecuteNonQuery()
                 'command.ExecuteNonQuery()
                 command2.ExecuteNonQuery()
@@ -71,7 +56,7 @@ Public Class Frm_Register
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
-            conn.Close()
+            dbConn.Close()
         End Try
     End Sub
     Private Sub Txt_Mobile_Number_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Txt_Mobile_Number.Validating

@@ -25,15 +25,14 @@ Partial Class Frm_home
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.NewUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AddUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PredictToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PredictToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PerformanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.AddUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,8 +51,26 @@ Partial Class Frm_home
         '
         Me.NewUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.DeleteUserToolStripMenuItem, Me.ChangePasswordToolStripMenuItem})
         Me.NewUserToolStripMenuItem.Name = "NewUserToolStripMenuItem"
-        Me.NewUserToolStripMenuItem.Size = New System.Drawing.Size(182, 29)
+        Me.NewUserToolStripMenuItem.Size = New System.Drawing.Size(108, 29)
         Me.NewUserToolStripMenuItem.Text = "New User "
+        '
+        'AddUserToolStripMenuItem
+        '
+        Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.AddUserToolStripMenuItem.Text = "Add User"
+        '
+        'DeleteUserToolStripMenuItem
+        '
+        Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
+        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.DeleteUserToolStripMenuItem.Text = "Delete User"
+        '
+        'ChangePasswordToolStripMenuItem
+        '
+        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
         '
         'PredictToolStripMenuItem
         '
@@ -86,33 +103,6 @@ Partial Class Frm_home
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(336, 189)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(241, 144)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'AddUserToolStripMenuItem
-        '
-        Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
-        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.AddUserToolStripMenuItem.Text = "Add User"
-        '
-        'DeleteUserToolStripMenuItem
-        '
-        Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
-        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.DeleteUserToolStripMenuItem.Text = "Delete User"
-        '
-        'ChangePasswordToolStripMenuItem
-        '
-        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
-        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
-        '
         'Frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -120,7 +110,6 @@ Partial Class Frm_home
         Me.BackgroundImage = Global.Chess_Trainer.My.Resources.Resources.Main
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1295, 450)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.MenuStrip1
@@ -143,7 +132,6 @@ Partial Class Frm_home
     Friend WithEvents PerformanceToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents Button1 As Button
     Friend WithEvents AddUserToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteUserToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
