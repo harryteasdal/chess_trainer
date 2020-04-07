@@ -20,23 +20,27 @@ Public Class Frm_Register
 
         'When the form loads the add user button is disabled as the text boxes have not ben check for validation'
         Btn_AddUser.Enabled = False
+        Try
+            countriesCommand = db.ExecuteStatement(conn, countries)
 
-        countriesCommand = db.ExecuteStatement(conn, countries)
+            'reads data from database and stores data in the countries table'
+            countriesReader = countriesCommand.ExecuteReader()
+            countriesTable.Load(countriesReader)
 
-        'reads data from database and stores data in the countries table'
-        countriesReader = countriesCommand.ExecuteReader()
-        countriesTable.Load(countriesReader)
+            'The combobox on the forms uses the data in the datatable'
+            cmb_country.DataSource = countriesTable
 
-        'The combobox on the forms uses the data in the datatable'
-        cmb_country.DataSource = countriesTable
-        '.diplaymember is what is shown in the combobox an .valuemember is waht is sent back to the database 
-        cmb_country.ValueMember = "country_id"
-        cmb_country.DisplayMember = "country"
+            'Display member is what is shown in the combobox an .valuemember is waht is sent back to the database 
+            cmb_country.ValueMember = "country_id"
+            cmb_country.DisplayMember = "country"
 
-        'Allows the user to click the add button when the text boxes have been validated'
-        If isValidated = True Then
-            Btn_AddUser.Enabled = True
-        End If
+            'Allows the user to click the add button when the text boxes have been validated'
+            If isValidated = True Then
+                Btn_AddUser.Enabled = True
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Private Sub Btn_AddUser_Click(sender As Object, e As EventArgs) Handles Btn_AddUser.Click

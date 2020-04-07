@@ -31,6 +31,9 @@ Partial Class Frm_home
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.AddUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,14 +44,15 @@ Partial Class Frm_home
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewUserToolStripMenuItem, Me.PredictToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 33)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1295, 33)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'NewUserToolStripMenuItem
         '
+        Me.NewUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.DeleteUserToolStripMenuItem, Me.ChangePasswordToolStripMenuItem})
         Me.NewUserToolStripMenuItem.Name = "NewUserToolStripMenuItem"
-        Me.NewUserToolStripMenuItem.Size = New System.Drawing.Size(108, 29)
+        Me.NewUserToolStripMenuItem.Size = New System.Drawing.Size(182, 29)
         Me.NewUserToolStripMenuItem.Text = "New User "
         '
         'PredictToolStripMenuItem
@@ -91,16 +95,40 @@ Partial Class Frm_home
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'AddUserToolStripMenuItem
+        '
+        Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.AddUserToolStripMenuItem.Text = "Add User"
+        '
+        'DeleteUserToolStripMenuItem
+        '
+        Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
+        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.DeleteUserToolStripMenuItem.Text = "Delete User"
+        '
+        'ChangePasswordToolStripMenuItem
+        '
+        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
+        '
         'Frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.BackgroundImage = Global.Chess_Trainer.My.Resources.Resources.Main
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ClientSize = New System.Drawing.Size(1295, 450)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Frm_home"
-        Me.Text = "Home"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Chess Trainer"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -116,4 +144,7 @@ Partial Class Frm_home
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents Button1 As Button
+    Friend WithEvents AddUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
 End Class

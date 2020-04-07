@@ -73,7 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbAccess.vb" />
+    <Compile Include="DataLayer\DbAccess.vb" />
     <Compile Include="Home.Designer.vb">
       <DependentUpon>Home.vb</DependentUpon>
     </Compile>
@@ -92,18 +92,18 @@
     <Compile Include="My Project\Prediction.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Predictions.vb" />
+    <Compile Include="Application_Logic\Predictions.vb" />
     <Compile Include="test.Designer.vb">
       <DependentUpon>test.vb</DependentUpon>
     </Compile>
     <Compile Include="test.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_registration.vb">
+    <Compile Include="User_Registration.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_registration.Designer.vb">
-      <DependentUpon>user_registration.vb</DependentUpon>
+    <Compile Include="User_Registration.Designer.vb">
+      <DependentUpon>User_Registration.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_registration.resx">
-      <DependentUpon>user_registration.vb</DependentUpon>
+    <EmbeddedResource Include="User_Registration.resx">
+      <DependentUpon>User_Registration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <None Include="Resources\Main.jpeg" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
