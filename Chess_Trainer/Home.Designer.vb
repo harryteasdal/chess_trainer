@@ -33,7 +33,10 @@ Partial Class Frm_home
         Me.PerformanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.HomeFooter = New System.Windows.Forms.StatusStrip()
+        Me.DbStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip1.SuspendLayout()
+        Me.HomeFooter.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -57,19 +60,19 @@ Partial Class Frm_home
         'AddUserToolStripMenuItem
         '
         Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
-        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
         Me.AddUserToolStripMenuItem.Text = "Add User"
         '
         'DeleteUserToolStripMenuItem
         '
         Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
-        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
         Me.DeleteUserToolStripMenuItem.Text = "Delete User"
         '
         'ChangePasswordToolStripMenuItem
         '
         Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
         Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
         '
         'PredictToolStripMenuItem
@@ -82,13 +85,13 @@ Partial Class Frm_home
         'PredictToolStripMenuItem1
         '
         Me.PredictToolStripMenuItem1.Name = "PredictToolStripMenuItem1"
-        Me.PredictToolStripMenuItem1.Size = New System.Drawing.Size(218, 34)
+        Me.PredictToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
         Me.PredictToolStripMenuItem1.Text = "Predict "
         '
         'PerformanceToolStripMenuItem
         '
         Me.PerformanceToolStripMenuItem.Name = "PerformanceToolStripMenuItem"
-        Me.PerformanceToolStripMenuItem.Size = New System.Drawing.Size(218, 34)
+        Me.PerformanceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.PerformanceToolStripMenuItem.Text = "Performance "
         '
         'ExitToolStripMenuItem
@@ -103,6 +106,22 @@ Partial Class Frm_home
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'HomeFooter
+        '
+        Me.HomeFooter.ImageScalingSize = New System.Drawing.Size(24, 24)
+        Me.HomeFooter.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DbStatus})
+        Me.HomeFooter.Location = New System.Drawing.Point(0, 418)
+        Me.HomeFooter.Name = "HomeFooter"
+        Me.HomeFooter.Size = New System.Drawing.Size(1295, 32)
+        Me.HomeFooter.TabIndex = 1
+        Me.HomeFooter.Text = "StatusStrip1"
+        '
+        'DbStatus
+        '
+        Me.DbStatus.Name = "DbStatus"
+        Me.DbStatus.Size = New System.Drawing.Size(180, 25)
+        Me.DbStatus.Text = "ToolStripStatusLabel1"
+        '
         'Frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -110,6 +129,7 @@ Partial Class Frm_home
         Me.BackgroundImage = Global.Chess_Trainer.My.Resources.Resources.Main
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1295, 450)
+        Me.Controls.Add(Me.HomeFooter)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.MenuStrip1
@@ -120,6 +140,8 @@ Partial Class Frm_home
         Me.Text = "Chess Trainer"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.HomeFooter.ResumeLayout(False)
+        Me.HomeFooter.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -135,4 +157,6 @@ Partial Class Frm_home
     Friend WithEvents AddUserToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteUserToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HomeFooter As StatusStrip
+    Friend WithEvents DbStatus As ToolStripStatusLabel
 End Class

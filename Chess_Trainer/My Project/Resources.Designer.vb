@@ -73,9 +73,39 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Predictions() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Predictions", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property UserGroup2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("UserGroup2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property UserRegistration() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("UserRegistration", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property UsersGroup() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("UsersGroup", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

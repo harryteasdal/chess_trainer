@@ -32,7 +32,9 @@ Public Class Frm_home
         Try
             conn = dbAccess.Open_Connection()
             If (conn.State <> ConnectionState.Open) Then
-                MsgBox("Not Connected to Database")
+                DbStatus.Text = "Not Connected"
+            Else
+                DbStatus.Text = "Connected"
             End If
         Catch ex As Exception
             Throw ex
@@ -40,6 +42,10 @@ Public Class Frm_home
     End Sub
 
     Private Sub AddUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
 End Class

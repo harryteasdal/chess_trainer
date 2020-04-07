@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application_Logic\PredictionEngine.vb" />
     <Compile Include="Application_Logic\Utils.vb" />
     <Compile Include="DataLayer\DbAccess.vb" />
     <Compile Include="Home.Designer.vb">
@@ -93,7 +94,13 @@
     <Compile Include="My Project\Prediction.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application_Logic\Predictions.vb" />
+    <Compile Include="PredictionGenerator.Designer.vb">
+      <DependentUpon>PredictionGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PredictionGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Predictions.vb" />
     <Compile Include="User_Registration.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +134,9 @@
     <EmbeddedResource Include="My Project\Prediction.resx">
       <DependentUpon>Prediction.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PredictionGenerator.resx">
+      <DependentUpon>PredictionGenerator.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Registration.resx">
       <DependentUpon>User_Registration.vb</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt" />
+    <None Include="Resources\UserGroup2.jfif" />
+    <None Include="Resources\UsersGroup.jfif" />
+    <None Include="Resources\Predictions.jfif" />
     <None Include="Resources\UserRegistration.jfif" />
     <None Include="Resources\Main.jpeg" />
   </ItemGroup>
