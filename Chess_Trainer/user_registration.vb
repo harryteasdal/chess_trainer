@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports Chess_Trainer.DatabaseAccess
-
+'Purpose: Registers Users for Application
+'Created: Harry Teasdale
+'Comments:
+'Version: 1.0
 Public Class Frm_Register
     'makes a new sql connection object "conn" and use a connetion statment to connct to the database'
     'Dim conn As SqlConnection = New SqlConnection("Data Source=HARRY-PAVILION\SQLEXPRESS;Initial Catalog=Chess_Trainer;Integrated Security=True")
@@ -37,26 +40,15 @@ Public Class Frm_Register
         Dim countryId = cmb_country.SelectedValue
         Dim rank = Txt_Rank.Text
         Dim modified As Integer
-        'SQL command to add a user to the database'
-        Dim command As New SqlCommand("Insert into dbo.chess_user values ('" & strFirstName & "','" & strSurname & "','" & strEmail & "'," & strMobile & "," & countryId & ");SELECT SCOPE_IDENTITY();", dbConn)
 
-        'Connects to database to add user and closes connection once done if unsuccessful error message displayed'
+        'Adds users to the database
         Try
-
             If isValidated Then
-                command.Connection = dbConn
-                modified = Convert.ToInt32(command.ExecuteScalar())
-                Dim command2 As New SqlCommand("Insert into dbo.player_rank (rank_number, user_id) values (" & rank & "," & modified & ")", dbConn)
-                command2.Connection = dbConn
-                'modified = command.ExecuteNonQuery()
-                'command.ExecuteNonQuery()
-                command2.ExecuteNonQuery()
+                Utils.AddUsers(dbConn, strFirstName, strSurname, strEmail, strMobile, countryId)
                 MessageBox.Show("User added successfully")
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
-        Finally
-            dbConn.Close()
         End Try
     End Sub
     Private Sub Txt_Mobile_Number_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Txt_Mobile_Number.Validating

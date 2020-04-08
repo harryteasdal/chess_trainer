@@ -160,7 +160,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="readme.txt" />
+    <None Include="readme.md" />
     <None Include="Resources\UserGroup2.jfif" />
     <None Include="Resources\UsersGroup.jfif" />
     <None Include="Resources\Predictions.jfif" />

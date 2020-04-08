@@ -23,6 +23,7 @@ Partial Class Frm_Register
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Register))
         Me.Txt_FirstName = New System.Windows.Forms.TextBox()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Lbl_Firstname = New System.Windows.Forms.Label()
@@ -39,6 +40,7 @@ Partial Class Frm_Register
         Me.Btn_AddUser = New System.Windows.Forms.Button()
         Me.Btn_Delete = New System.Windows.Forms.Button()
         Me.Btn_Return = New System.Windows.Forms.Button()
+        Me.txtEmailMaskedTextBox = New System.Windows.Forms.MaskedTextBox()
         Me.SuspendLayout()
         '
         'Txt_FirstName
@@ -171,6 +173,14 @@ Partial Class Frm_Register
         Me.Btn_Return.Text = "Return"
         Me.Btn_Return.UseVisualStyleBackColor = True
         '
+        'txtEmailMaskedTextBox
+        '
+        Me.txtEmailMaskedTextBox.Location = New System.Drawing.Point(485, 157)
+        Me.txtEmailMaskedTextBox.Mask = resources.GetString("txtEmailMaskedTextBox.Mask")
+        Me.txtEmailMaskedTextBox.Name = "txtEmailMaskedTextBox"
+        Me.txtEmailMaskedTextBox.Size = New System.Drawing.Size(283, 26)
+        Me.txtEmailMaskedTextBox.TabIndex = 16
+        '
         'Frm_Register
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -178,6 +188,7 @@ Partial Class Frm_Register
         Me.BackgroundImage = Global.Chess_Trainer.My.Resources.Resources.UserRegistration
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(814, 416)
+        Me.Controls.Add(Me.txtEmailMaskedTextBox)
         Me.Controls.Add(Me.Btn_Return)
         Me.Controls.Add(Me.Btn_Delete)
         Me.Controls.Add(Me.Btn_AddUser)
@@ -219,4 +230,5 @@ Partial Class Frm_Register
     Friend WithEvents Btn_AddUser As Button
     Friend WithEvents Btn_Delete As Button
     Friend WithEvents Btn_Return As Button
+    Friend WithEvents txtEmailMaskedTextBox As MaskedTextBox
 End Class

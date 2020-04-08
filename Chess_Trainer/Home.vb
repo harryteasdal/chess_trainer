@@ -15,7 +15,6 @@ Public Class Frm_home
                 MessageBoxIcon.Error,
                 MessageBoxDefaultButton.Button1)
         End If
-
     End Sub
 
     Private Sub PredictToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PredictToolStripMenuItem1.Click
