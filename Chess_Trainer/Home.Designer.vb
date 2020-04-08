@@ -28,6 +28,7 @@ Partial Class Frm_home
         Me.AddUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GetUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PredictToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PredictToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PerformanceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -52,7 +53,7 @@ Partial Class Frm_home
         '
         'NewUserToolStripMenuItem
         '
-        Me.NewUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.DeleteUserToolStripMenuItem, Me.ChangePasswordToolStripMenuItem})
+        Me.NewUserToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUserToolStripMenuItem, Me.DeleteUserToolStripMenuItem, Me.ChangePasswordToolStripMenuItem, Me.GetUserToolStripMenuItem})
         Me.NewUserToolStripMenuItem.Name = "NewUserToolStripMenuItem"
         Me.NewUserToolStripMenuItem.Size = New System.Drawing.Size(108, 29)
         Me.NewUserToolStripMenuItem.Text = "New User "
@@ -60,20 +61,26 @@ Partial Class Frm_home
         'AddUserToolStripMenuItem
         '
         Me.AddUserToolStripMenuItem.Name = "AddUserToolStripMenuItem"
-        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
+        Me.AddUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.AddUserToolStripMenuItem.Text = "Add User"
         '
         'DeleteUserToolStripMenuItem
         '
         Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
-        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
+        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.DeleteUserToolStripMenuItem.Text = "Delete User"
         '
         'ChangePasswordToolStripMenuItem
         '
         Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(254, 34)
+        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
+        '
+        'GetUserToolStripMenuItem
+        '
+        Me.GetUserToolStripMenuItem.Name = "GetUserToolStripMenuItem"
+        Me.GetUserToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.GetUserToolStripMenuItem.Text = "Get User"
         '
         'PredictToolStripMenuItem
         '
@@ -85,13 +92,13 @@ Partial Class Frm_home
         'PredictToolStripMenuItem1
         '
         Me.PredictToolStripMenuItem1.Name = "PredictToolStripMenuItem1"
-        Me.PredictToolStripMenuItem1.Size = New System.Drawing.Size(270, 34)
+        Me.PredictToolStripMenuItem1.Size = New System.Drawing.Size(218, 34)
         Me.PredictToolStripMenuItem1.Text = "Predict "
         '
         'PerformanceToolStripMenuItem
         '
         Me.PerformanceToolStripMenuItem.Name = "PerformanceToolStripMenuItem"
-        Me.PerformanceToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
+        Me.PerformanceToolStripMenuItem.Size = New System.Drawing.Size(218, 34)
         Me.PerformanceToolStripMenuItem.Text = "Performance "
         '
         'ExitToolStripMenuItem
@@ -159,4 +166,5 @@ Partial Class Frm_home
     Friend WithEvents ChangePasswordToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HomeFooter As StatusStrip
     Friend WithEvents DbStatus As ToolStripStatusLabel
+    Friend WithEvents GetUserToolStripMenuItem As ToolStripMenuItem
 End Class

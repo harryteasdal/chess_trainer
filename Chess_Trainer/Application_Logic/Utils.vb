@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 'Purpose: Main Business Logic Class
 'Created: Harry Teasdale
-'Comments:
+'Comments: 
 'Version: 1.0
 NotInheritable Class Utils
     Private Sub New()

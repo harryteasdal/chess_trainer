@@ -47,4 +47,8 @@ Public Class Frm_home
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
+
+    Private Sub GetUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GetUserToolStripMenuItem.Click
+        UserDetails.Show()
+    End Sub
 End Class
