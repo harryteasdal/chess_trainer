@@ -134,6 +134,19 @@ NotInheritable Class Utils
             Throw ex
         End Try
     End Function
+    'Purpose: Formats user name 
+    'Created: Harry Teasdale
+    'Comments: Formats a user
+    'Version: 1.0
+    Public Shared Function FormatUserName(dbConn As SqlConnection, userId As Integer)
+        Try
+            Dim userSql As String = String.Format("SELECT firstname, secondname FROM chess_user where user_id = {0}", userId)
+            Dim formattedUserName As String
 
+            Return formattedUserName
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class
 
