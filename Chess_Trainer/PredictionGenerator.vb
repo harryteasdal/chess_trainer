@@ -46,7 +46,6 @@ Public Class PredictionGenerator
             Dim predictionResult As Integer = predict.GetPrediction(player1_Id, player2_Id, player1_Rank, player2_Rank)
             Dim predictionResult2 As Integer = 100 - predictionResult
 
-
             If predictionResult > predictionResult2 Then
                 lblResult.Text = String.Format("Player 1 is more likely to win at a percentage of {0}%", predictionResult)
             Else
