@@ -24,13 +24,13 @@ Public Class UserDetails
             Throw ex
         End Try
     End Sub
-
-    Private Sub cmbUser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUser.SelectedIndexChanged
+    Private Sub cmbUser_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbUser.SelectedValueChanged
         'Get the User Id of the Selected User
-        Dim selectedUserId As Integer = 11 'CInt(cmbUser.SelectedValue)
+        Dim selectedUserId As String = 11 'cmbUser.SelectedValue.ToString
+
         Dim userDetails As DataTable = New DataTable()
 
-        userDetails = Utils.GetUserById(dbConn, selectedUserId)
+        UserDetails = Utils.GetUserById(dbConn, selectedUserId)
 
         If (userDetails.Rows.Count = 1) Then
             'There should only ever be on row
@@ -42,6 +42,5 @@ Public Class UserDetails
         Else
             UserCount.Text = "Warning: No Users Details"
         End If
-
     End Sub
 End Class

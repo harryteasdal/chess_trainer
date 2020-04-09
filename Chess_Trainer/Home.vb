@@ -10,23 +10,6 @@ Public Class Frm_home
     'Comments: Returns the Id of the user
     Dim dbAccess As DatabaseAccess
     Dim conn As SqlConnection
-    Private Sub NewUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewUserToolStripMenuItem.Click
-        'Purpose: Checks that the database connection is open
-        'Created: Harry Teasdale
-        'Comments: Shows message box if connection is not open
-        'Version: 1.0
-        If (conn.State = ConnectionState.Open) Then
-            Frm_Register.dbConn = conn
-            Frm_Register.Show()
-        Else
-            MessageBox.Show(
-                "Lost Database Connection",
-                "Chess Trainer Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error,
-                MessageBoxDefaultButton.Button1)
-        End If
-    End Sub
     'Purpose: Launches application
     'Created: Harry Teasdale
     'Comments: Retrieves and tests database connection
@@ -64,5 +47,28 @@ Public Class Frm_home
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub AddUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserToolStripMenuItem.Click
+        'Purpose: Checks that the database connection is open
+        'Created: Harry Teasdale
+        'Comments: Shows message box if connection is not open
+        'Version: 1.0
+        If (conn.State = ConnectionState.Open) Then
+            Frm_Register.dbConn = conn
+            Frm_Register.Show()
+        Else
+            MessageBox.Show(
+                "Lost Database Connection",
+                "Chess Trainer Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error,
+                MessageBoxDefaultButton.Button1)
+        End If
+    End Sub
+
+    Private Sub PredictToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles PredictToolStripMenuItem1.Click
+        PredictionGenerator.dbConn = conn
+        PredictionGenerator.Show()
     End Sub
 End Class

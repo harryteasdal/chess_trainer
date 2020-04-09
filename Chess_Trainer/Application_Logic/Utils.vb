@@ -104,8 +104,10 @@ NotInheritable Class Utils
     'Version: 1.0
     Public Shared Function GetCurrentRankForUser(dbConn As SqlConnection, userId As Integer)
         Try
+            Dim db As New DatabaseAccess()
             Dim currentRankSql As String = String.Format("SELECT * FROM player_rank where user_id = {0}", userId)
-            Return 0
+            Dim rank As DataTable = db.Get_Data(dbConn, currentRankSql)
+            Return (rank.Rows(0).Item(1))
         Catch ex As Exception
             Throw ex
         End Try
