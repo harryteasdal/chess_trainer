@@ -182,5 +182,8 @@
   <ItemGroup>
     <None Include="Resources\UserDetailsGroup.jfif" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\dbscript.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

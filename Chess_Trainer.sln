@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Chess_Trainer", "Chess_Trai
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A6C9AF1-7AED-4788-8E31-56D8DDCD1854}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseItems", "DatabaseItems", "{650F3CDC-9080-4B96-AB67-1587B348F1BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{650F3CDC-9080-4B96-AB67-1587B348F1BC} = {2A6C9AF1-7AED-4788-8E31-56D8DDCD1854}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D831D1CE-0D14-47ED-9441-43C6F31CE0F8}

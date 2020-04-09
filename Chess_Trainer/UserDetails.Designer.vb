@@ -135,7 +135,7 @@ Partial Class UserDetails
         Me.MinimizeBox = False
         Me.Name = "UserDetails"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "View User Details"
+        Me.Text = " "
         Me.grpUserDetails.ResumeLayout(False)
         Me.grpUserDetails.PerformLayout()
         Me.UserList.ResumeLayout(False)

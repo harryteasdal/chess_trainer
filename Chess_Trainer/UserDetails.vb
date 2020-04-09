@@ -27,13 +27,18 @@ Public Class UserDetails
 
     Private Sub cmbUser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbUser.SelectedIndexChanged
         'Get the User Id of the Selected User
-        Dim selectedUser As Integer = cmbUser.SelectedIndex
+        Dim selectedUserId As Integer = 11 'CInt(cmbUser.SelectedValue)
         Dim userDetails As DataTable = New DataTable()
 
-        userDetails = Utils.GetUserById(dbConn, selectedUser)
+        userDetails = Utils.GetUserById(dbConn, selectedUserId)
 
         If (userDetails.Rows.Count = 1) Then
-            lblForename.Text = "firstname"
+            'There should only ever be on row
+            Dim userRow As DataRow = userDetails.Rows.Item(0)
+            lblForename.Text = userRow(1)
+            lblSurname.Text = userRow(2)
+            lblEmail.Text = userRow(3)
+            lblMobile.Text = userRow(4)
         Else
             UserCount.Text = "Warning: No Users Details"
         End If
