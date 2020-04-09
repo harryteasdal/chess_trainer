@@ -142,7 +142,11 @@ NotInheritable Class Utils
         Try
             Dim userSql As String = String.Format("SELECT firstname, secondname FROM chess_user where user_id = {0}", userId)
             Dim formattedUserName As String
+            Dim usersTable As New DataTable()
+            Dim db As New DatabaseAccess()
 
+            usersTable = db.Get_Data(dbConn, userSql)
+            formattedUserName = "firstname" & " " & "secondname"
             Return formattedUserName
         Catch ex As Exception
             Throw ex
