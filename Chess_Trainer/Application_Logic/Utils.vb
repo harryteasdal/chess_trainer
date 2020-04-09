@@ -74,6 +74,19 @@ NotInheritable Class Utils
             Throw ex
         End Try
     End Function
+    'Purpose: Gets a user from the database by Id
+    'Created: Harry Teasdale
+    'Comments:
+    'Version: 1.0
+    Public Shared Function GetUserById(dbConn As SqlConnection, userId As Integer)
+        Try
+            Dim db As New DatabaseAccess()
+            Dim getUserByIdSql As String = String.Format("SELECT * FROM chess_user where user_id = {0}", userId)
+            Return (db.Get_Data(dbConn, getUserByIdSql))
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
     'Purpose: Sets a rank for a user
     'Created: Harry Teasdale
     'Comments:
@@ -148,6 +161,17 @@ NotInheritable Class Utils
             usersTable = db.Get_Data(dbConn, userSql)
             formattedUserName = "firstname" & " " & "secondname"
             Return formattedUserName
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+    'Purpose: Concatanate Strings  
+    'Created: Harry Teasdale
+    'Comments: Formats a user
+    'Version: 1.0
+    Public Shared Function ConcatanateStrings(value_1 As String, value_2 As String, seperator As String)
+        Try
+            Return String.Concat(value_1, seperator, value_2)
         Catch ex As Exception
             Throw ex
         End Try
